@@ -1,0 +1,21 @@
+﻿
+C:\Users\NIKHIL\OneDrive\Desktop\Project for push\React-Project to push\lms-clone\src\components\ApplyLeave.jsx
+   5:7   error  Fast refresh only works when a file has exports. Move your component(s) to a separate file  react-refresh/only-export-components
+   6:10  error  'formData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+  16:18  error  'form' is not defined                                                                       no-undef
+  51:36  error  'handleSubmit' is not defined                                                               no-undef
+  55:56  error  'form' is not defined                                                                       no-undef
+  75:32  error  'form' is not defined                                                                       no-undef
+  77:32  error  'form' is not defined                                                                       no-undef
+  82:32  error  'form' is not defined                                                                       no-undef
+  84:32  error  'form' is not defined                                                                       no-undef
+  90:56  error  'form' is not defined                                                                       no-undef
+
+C:\Users\NIKHIL\OneDrive\Desktop\Project for push\React-Project to push\lms-clone\src\pages\Landing.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\NIKHIL\OneDrive\Desktop\Project for push\React-Project to push\lms-clone\src\pages\Login.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 12 problems (12 errors, 0 warnings)
+
