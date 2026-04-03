@@ -5,6 +5,7 @@ export default function AttendanceCard({ attendance }) {
     attendance;
 
   const percent = Math.round((present / total) * 100);
+  const percentWithBonus = Math.round(((present + bonus) / total) * 100);
 
   return (
     <div className="rounded-xl border border-neutral-800 bg-neutral-900 mb-6">
@@ -27,7 +28,7 @@ export default function AttendanceCard({ attendance }) {
             </span>
           </div>
 
-          <div className="text-sm text-neutral-400">{percent}%</div>
+          <div className="text-sm text-neutral-400">{percentWithBonus}%</div>
         </div>
       </div>
 
@@ -37,7 +38,7 @@ export default function AttendanceCard({ attendance }) {
           <div className="w-full h-3 bg-neutral-800 rounded-full overflow-hidden">
             <div
               className="h-3 bg-green-500"
-              style={{ width: `${percent}%` }}
+              style={{ width: `${percentWithBonus}%` }}
             />
           </div>
 

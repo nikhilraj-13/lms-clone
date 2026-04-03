@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Navbar from "../components/Navbar";
 import TopCard from "../components/TopCard";
@@ -11,8 +11,20 @@ import EventsCard from "../components/EventsCard";
 import SmallCard from "../components/SmallCard";
 
 export default function StudentDashboard() {
-  const data = localStorage.getItem("user");
-  const user = data ? JSON.parse(data) : null;
+  const [user, setUser] = useState(() => {
+    const data = localStorage.getItem("user");
+    return data ? JSON.parse(data) : null;
+  });
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const data = localStorage.getItem("user");
+      setUser(data ? JSON.parse(data) : null);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   if (!user) return <div>No user</div>;
 
@@ -29,7 +41,7 @@ export default function StudentDashboard() {
         </div>
 
         {/* ATTENDANCE */}
-        <AttendanceCard attendance={user.attendance} />
+        <AttendanceCard attendance={user.attendance[1]} />
 
         {/* PROFILE + SUBJECTS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -50,11 +62,9 @@ export default function StudentDashboard() {
         <EventsCard events={user.events} />
 
         {/* BOTTOM CARDS */}
-        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <SmallCard title="Need help?" text="Contact your mentor" />
-
           <SmallCard title="Timetable" text="Check classes (coming soon)" />
-
           <SmallCard title="Chat" text="View Chat Groups" link />
         </div>
       </div>
