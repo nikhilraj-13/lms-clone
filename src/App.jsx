@@ -12,7 +12,7 @@ import FeedBack from "./components/FeedBack";
 import WeeklyFeedback from "./components/WeeklyFeedback";
 import Profile from "./components/Profile";
 import Chat from "./pages/Chat";
-import ProtectedRoute from "./components/ProtectedRoute";
+import Events from "./pages/Events";
 import { checkAuth } from "./utils/auth";
 
 function App() {
@@ -35,73 +35,59 @@ function App() {
       <Route 
         path="/student/attendance" 
         element={
-          <ProtectedRoute>
             <StudentAttendance />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/calendar" 
         element={
-          <ProtectedRoute>
             <StudentCalendar />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/semester-attendance" 
         element={
-          <ProtectedRoute>
             <SemesterAttendance />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/assignments" 
         element={
-          <ProtectedRoute>
             <Assignments />
-          </ProtectedRoute>
         } 
+      />
+        <Route
+        path="/student/events"
+        element={<Events />}
       />
       <Route 
         path="/student/apply-leave" 
         element={
-          <ProtectedRoute>
             <ApplyLeave />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/feedback" 
         element={
-          <ProtectedRoute>
             <FeedBack />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/weekly-feedback" 
         element={
-          <ProtectedRoute>
             <WeeklyFeedback />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/profile" 
         element={
-          <ProtectedRoute>
             <Profile />
-          </ProtectedRoute>
         } 
       />
       <Route 
         path="/student/chat" 
         element={
-          <ProtectedRoute>
             <Chat />
-          </ProtectedRoute>
         } 
       />
 

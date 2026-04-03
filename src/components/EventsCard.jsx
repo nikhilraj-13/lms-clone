@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function EventsCard({ events }) {
   return (
@@ -11,7 +12,7 @@ export default function EventsCard({ events }) {
           <div className="flex items-center gap-3 text-sm text-neutral-400">
             <span>{events.length} shown</span>
 
-            <span className="text-xs underline hover:text-white cursor-pointer">
+            <span onClick={()=>navigate("/student/events")} className="text-xs underline hover:text-white cursor-pointer">
               View all
             </span>
           </div>
